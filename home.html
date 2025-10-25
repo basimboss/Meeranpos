@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>RFONIC MOBILES - Home</title>
+
+  <!-- css -->
+  <link rel="stylesheet" href="home.css">
+
+  <!-- jsQR library for scanning -->
+  <script src="https://cdn.jsdelivr.net/npm/jsqr/dist/jsQR.js"></script>
+
+  <!-- main home logic -->
+  <script src="home.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>RFONIC MOBILES</h1>
+
+    <div class="actions">
+      <div class="search-container">
+        <input type="text" id="searchinput" placeholder="Search mobile...">
+        <button id="searchBtn">Search</button>
+      </div>
+
+      <button id="scannerBtn">Scan</button>
+
+      <!-- scanner overlay (hidden) -->
+      <div id="scannerScreen" style="display:none;">
+        <video id="cameraFeed" autoplay playsinline></video>
+        <canvas id="barcodeCanvas" style="display:none;"></canvas>
+        <button id="closeScannerBtn" class="scanner-btn">Close Scanner</button>
+      </div>
+
+      <button id="addMobileBtn">+</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="mobile-options">
+      <button>All Stock</button>
+      <button>Stock</button>
+      <button>Service</button>
+      <button>Sold</button>
+    </div>
+
+    <div id="mobileList"></div>
+  </main>
+</body>
+</html>
+

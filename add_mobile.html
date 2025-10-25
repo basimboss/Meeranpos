@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Add Mobile - Refonic Mobiles</title>
+  <link rel="stylesheet" href="add_mobile.css">
+
+  <!-- jsQR for scanning from this page too -->
+  <script src="https://cdn.jsdelivr.net/npm/jsqr/dist/jsQR.js"></script>
+
+  <script src="add_mobile.js" defer></script>
+</head>
+<body>
+  <div class="add-mobile-container">
+    <h2>Add / Edit Mobile</h2>
+
+    <form id="mobileForm">
+      <label>Mobile Name</label>
+      <input type="text" id="mobileName" placeholder="Enter mobile name" required>
+
+      <label>Purchase From</label>
+      <input type="text" id="purchaseFrom" placeholder="Purchased from" required>
+
+      <label>Purchase Date</label>
+      <input type="date" id="purchaseDate" required>
+
+      <label>IMEI / ID</label>
+      <input type="text" id="imei" placeholder="Enter IMEI or ID" required>
+
+      <label>Description</label>
+      <textarea id="description" placeholder="Enter description"></textarea>
+
+      <label>Status</label>
+      <div class="status-options">
+        <label><input type="radio" name="status" value="Stock" checked> Stock</label>
+        <label><input type="radio" name="status" value="Service"> Service</label>
+        <label><input type="radio" name="status" value="Sell" id="sellOption"> Sell</label>
+      </div>
+
+      <div id="sellDateSection" style="display:none;">
+        <label>Sell Date</label>
+        <input type="date" id="sellDate">
+      </div>
+
+      <label>Barcode ID</label>
+      <div class="barcode-section">
+        <input type="text" id="barcodeId" placeholder="Scan or enter barcode" readonly>
+        <button type="button" id="scanBarcodeBtn">Scan Barcode</button>
+      </div>
+
+      <button type="submit" class="submit-btn">Save Mobile</button>
+    </form>
+  </div>
+
+  <!-- scanner overlay for add page -->
+  <div id="addScannerScreen" style="display:none;">
+    <video id="addCameraFeed" autoplay playsinline></video>
+    <canvas id="addBarcodeCanvas" style="display:none;"></canvas>
+    <button id="addCloseScannerBtn" class="scanner-btn">Close Scanner</button>
+  </div>
+</body>
+</html>
+

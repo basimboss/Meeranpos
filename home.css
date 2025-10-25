@@ -1,0 +1,56 @@
+/* ===== Home Page Styling ===== */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f3e6ff;
+}
+
+/* header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #3B0170;
+  color: white;
+}
+header h1 { margin: 0; font-size: 1.6rem; }
+
+.actions {
+  display:flex; align-items:center; gap:10px;
+}
+.actions button { padding:8px 12px; border-radius:8px; border:none; background:white; color:#3B0170; cursor:pointer; }
+.search-container { display:flex; gap:6px; }
+.search-container input { padding:8px; border-radius:6px; border:none; width:150px; }
+
+/* filters */
+.mobile-options { display:flex; justify-content:center; gap:8px; margin:14px 0; }
+.mobile-options button { padding:8px 12px; border-radius:6px; border:none; background:#a36cd3; color:white; cursor:pointer; }
+.mobile-options button.active-filter { box-shadow: 0 2px 8px rgba(0,0,0,0.12); transform:translateY(-2px); }
+
+/* list */
+#mobileList { width:90%; max-width:1000px; margin: auto; display:flex; flex-direction:column; gap:12px; padding-bottom:40px; }
+.mobile-item {
+  background:white; border-radius:12px; padding:12px; box-shadow:0 4px 10px rgba(0,0,0,0.08);
+  cursor:pointer; transition:transform .15s;
+}
+.mobile-item:hover { transform: translateY(-2px); }
+.mobile-item p{ margin:6px 0; }
+.action-buttons { display:flex; gap:8px; margin-top:8px; }
+.action-buttons button { border:none; padding:8px 10px; border-radius:8px; cursor:pointer; color:white; font-weight:600; }
+.action-buttons .sell-btn { background:#28a745; }
+.action-buttons .sell-btn:disabled { background:#cfcfcf; cursor:not-allowed; color:#666; }
+.action-buttons .delete-btn { background:#dc3545; }
+
+/* highlight for search match */
+.mobile-item.highlight { outline:3px solid #ffeb3b; background:#fffdf2; }
+
+/* scanner overlay */
+#scannerScreen {
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  background:black; height:100vh; width:100%; position:fixed; top:0; left:0; z-index:9999;
+}
+#cameraFeed { width:90%; max-width:420px; border-radius:12px; border:3px solid #9333ea; }
+.scanner-btn { margin-top:10px; background:#9333ea; color:white; border:none; padding:10px 16px; border-radius:8px; cursor:pointer; }
+
